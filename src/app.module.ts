@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import { CatModule } from './cats/cat.module';
 import { AuthModule } from './auth/auth.module';
 import { GamesModule } from './games/games.module';
+import { RolesModule } from './auth/role/role.module';
 
 type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' | 'oracle';
 @Module({
@@ -29,6 +30,7 @@ type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' 
             }),
         }),
         GamesModule,
+        RolesModule,
     ],
     controllers: [AppController],
     providers: [AppService],
