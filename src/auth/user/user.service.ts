@@ -16,8 +16,10 @@ export class UserService {
         private readonly rolesService: RoleService,
     ) {}
 
-    findAll() {
-        return this.userRepository.find();
+    findAll(username?: string, email?: string) {
+        return this.userRepository.find({
+            where: { username, email },
+        });
     }
 
     async update(id: number, updateUserDto: UpdateUserDto) {
